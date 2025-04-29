@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MyCloset</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://kit.fontawesome.com/834ba97cca.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="app">
+        <nav>
+            <div class="logo">MyCloset</div>
+            <ul>
+                <li><a href="../html/index.html" @click="goToHome">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <!-- <li><a href="#" @click="goToLogin"><i class="fa-solid fa-user"></i></a></li> -->
+            </ul>
+        </nav>
+
+        <!-- Login Page -->
+        <div class="login-container">
+            <h2>Login</h2>
+            <form @submit.prevent="handleLogin">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" v-model="email" placeholder="Enter your email" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" v-model="password" placeholder="Enter your password" required />
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p v-if="error" class="error-message">{{ error }}</p>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>MyCloset is your one-stop shop for the latest fashion trends.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: support@mycloset.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MyCloset. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../components/app.js"></script>
+</body>
+</html>
